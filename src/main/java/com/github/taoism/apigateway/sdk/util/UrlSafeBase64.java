@@ -1,6 +1,6 @@
-package com.dataqin.apigateway.sdk.util;
+package com.github.taoism.apigateway.sdk.util;
 
-import com.dataqin.apigateway.sdk.common.Constants;
+import com.github.taoism.apigateway.sdk.common.Constants;
 
 public final class UrlSafeBase64 {
 

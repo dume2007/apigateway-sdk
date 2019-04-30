@@ -1,7 +1,7 @@
-package com.dataqin.apigateway.sdk.util;
+package com.github.taoism.apigateway.sdk.util;
 
-import com.dataqin.apigateway.sdk.exception.SignatureExpireException;
-import com.dataqin.apigateway.sdk.exception.SignatureWrongNumberException;
+import com.github.taoism.apigateway.sdk.exception.SignatureExpireException;
+import com.github.taoism.apigateway.sdk.exception.SignatureWrongNumberException;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;

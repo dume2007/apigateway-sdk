@@ -1,4 +1,4 @@
-package com.dataqin.apigateway.sdk.exception;
+package com.github.taoism.apigateway.sdk.exception;
 
 public class NullException extends GatewayRuntimeException {
     private static final long serialVersionUID = -7204556289593045601L;

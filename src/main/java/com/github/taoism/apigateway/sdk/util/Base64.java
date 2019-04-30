@@ -1,4 +1,4 @@
-package com.dataqin.apigateway.sdk.util;
+package com.github.taoism.apigateway.sdk.util;
 
 import java.io.UnsupportedEncodingException;
 

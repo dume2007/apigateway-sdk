@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dataqin.apigateway.sdk</groupId>
-    <artifactId>dataqin-apigateway-sdk</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.github.taoism</groupId>
+    <artifactId>apigateway-sdk</artifactId>
+    <version>1.0.0</version>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
@@ -21,14 +21,6 @@
             <version>1.7.26</version>
         </dependency>
     </dependencies>
-
-    <distributionManagement>
-        <repository>
-            <id>maven-snapshots</id>
-            <name>maven snapshots</name>
-            <url>http://192.168.3.6:8081/repository/maven-snapshots/</url>
-        </repository>
-    </distributionManagement>
 
     <build>
         <plugins>

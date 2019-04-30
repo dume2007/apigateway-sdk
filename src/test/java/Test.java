@@ -1,6 +1,6 @@
-import com.dataqin.apigateway.sdk.exception.SignatureWrongNumberException;
-import com.dataqin.apigateway.sdk.util.Auth;
-import com.dataqin.apigateway.sdk.util.UrlSafeBase64;
+import com.github.taoism.apigateway.sdk.exception.SignatureWrongNumberException;
+import com.github.taoism.apigateway.sdk.util.Auth;
+import com.github.taoism.apigateway.sdk.util.UrlSafeBase64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,8 +11,8 @@ public class Test {
     private final static Logger logger = LoggerFactory.getLogger(Test.class);
 
     public static void main(String[] args) {
-        String accessKey = "dataqin-ak-test1";
-        String secretKey = "dataqin-sk-test20";
+        String accessKey = "ak-test1";
+        String secretKey = "sk-test20";
         String url = "http://127.0.0.1:8080/api/test/hello?a=1&b=2";
         HashMap<String, String> body = new HashMap<>(16);
         body.put("c", "1");

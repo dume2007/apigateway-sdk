@@ -1,4 +1,4 @@
-package com.dataqin.apigateway.sdk.exception;
+package com.github.taoism.apigateway.sdk.exception;
 
 /**
  * @author Administrator

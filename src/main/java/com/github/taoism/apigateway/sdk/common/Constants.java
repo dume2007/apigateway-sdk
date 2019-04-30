@@ -1,4 +1,4 @@
-package com.dataqin.apigateway.sdk.common;
+package com.github.taoism.apigateway.sdk.common;
 
 import java.nio.charset.Charset;
 /**

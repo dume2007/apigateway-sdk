@@ -1,6 +1,6 @@
-package com.dataqin.apigateway.sdk.util;
+package com.github.taoism.apigateway.sdk.util;
 
-import com.dataqin.apigateway.sdk.common.Constants;
+import com.github.taoism.apigateway.sdk.common.Constants;
 
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
@@ -43,11 +43,11 @@ public final class StringUtils {
      * <p>
      * 例如有字符串数组array和连接符为逗号(,)
      * <code>
-     * String[] array = new String[] { "hello", "world", "dataqin", "apigateway","sdk" };
+     * String[] array = new String[] { "hello", "world", "apigateway","sdk" };
      * </code>
      * 那么得到的结果是:
      * <code>
-     * hello,world,dataqin,apigateway,apigateway
+     * hello,world,apigateway,apigateway
      * </code>
      * </p>
      *
@@ -90,11 +90,11 @@ public final class StringUtils {
      * <p>
      * 例如有字符串数组array
      * <code>
-     * String[] array = new String[] { "hello", "world", "dataqin", "apigateway","sdk" };
+     * String[] array = new String[] { "hello", "world", "apigateway","sdk" };
      * </code>
      * 那么得到的结果是:
      * <code>
-     * "hello","world","dataqin","apigateway","sdk"
+     * "hello","world","apigateway","sdk"
      * </code>
      * </p>
      *
