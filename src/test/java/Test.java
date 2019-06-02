@@ -22,6 +22,9 @@ public class Test {
         logger.info(new String(UrlSafeBase64.decode(s)));
 
         HashMap<String, Object> body = new HashMap<>(16);
+        HashMap<String, Object> acceptancelist = new HashMap<>(16);
+        acceptancelist.put("bdclx", "不动产类型");
+        acceptancelist.put("qxdm", "区县代码");
 
         body.put("cxrmc", "ddc");
         body.put("zjh", "35220319874561890207");
@@ -29,6 +32,7 @@ public class Test {
         body.put("djjgid", "610000");
         body.put("bdcdjzmh", "wx2019");
         body.put("lcdm", 5301);
+        body.put("acceptancelist", acceptancelist);
         body.put("timestamp", 1258711455);
 
         String s2 = auth.getSign(url, body);

@@ -1,5 +1,6 @@
 package com.dataqin.apigateway.sdk.util;
 
+import com.alibaba.fastjson.JSON;
 import com.dataqin.apigateway.sdk.exception.SignatureExpireException;
 import com.dataqin.apigateway.sdk.exception.SignatureWrongNumberException;
 
@@ -77,8 +78,13 @@ public class Auth {
                 if (objectVal instanceof Integer) {
                     val = String.valueOf(objectVal);
                 } else {
-                    val = (String) objectVal;
+                    try {
+                        val = (String) objectVal;
+                    } catch (ClassCastException e) {
+                        val = JSON.toJSONString(objectVal);
+                    }
                 }
+
                 queryString.append(o).append("=");
                 queryString.append(URLEncoder.encode(val, "UTF-8")).append("&");
             } catch (UnsupportedEncodingException e) {
