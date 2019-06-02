@@ -1,7 +1,7 @@
-package com.github.taoism.apigateway.sdk.util;
+package com.dataqin.apigateway.sdk.util;
 
-import com.github.taoism.apigateway.sdk.exception.SignatureExpireException;
-import com.github.taoism.apigateway.sdk.exception.SignatureWrongNumberException;
+import com.dataqin.apigateway.sdk.exception.SignatureExpireException;
+import com.dataqin.apigateway.sdk.exception.SignatureWrongNumberException;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -72,8 +72,15 @@ public class Auth {
 
         for (Object o : key) {
             try {
+                String val;
+                Object objectVal = data.get(o);
+                if (objectVal instanceof Integer) {
+                    val = String.valueOf(objectVal);
+                } else {
+                    val = (String) objectVal;
+                }
                 queryString.append(o).append("=");
-                queryString.append(URLEncoder.encode((String) data.get(o), "UTF-8")).append("&");
+                queryString.append(URLEncoder.encode(val, "UTF-8")).append("&");
             } catch (UnsupportedEncodingException e) {
                 // do nothing
             }
@@ -108,7 +115,7 @@ public class Auth {
      * @param body
      * @return
      */
-    public boolean validSign(String sign, String urlString, HashMap<String, String> body, long deadline) {
+    public boolean validSign(String sign, String urlString, HashMap<String, Object> body, long deadline) {
         long currentTime = System.currentTimeMillis() / 1000;
         if (currentTime > deadline) {
             throw new SignatureExpireException("Signature expire");
@@ -135,7 +142,7 @@ public class Auth {
      * @param body
      * @return
      */
-    public String getSign(String urlString, HashMap<String, String> body) {
+    public String getSign(String urlString, HashMap<String, Object> body) {
         long deadline = System.currentTimeMillis() / 1000 + EXPIRE;
         return getSign(urlString, body, deadline);
     }
@@ -147,7 +154,7 @@ public class Auth {
      * @param deadline
      * @return
      */
-    private String getSign(String urlString, HashMap<String, String> body, long deadline) {
+    private String getSign(String urlString, HashMap<String, Object> body, long deadline) {
         URI uri = URI.create(urlString);
         String path = uri.getRawPath();
         String query = uri.getRawQuery();

@@ -1,6 +1,6 @@
-package com.github.taoism.apigateway.sdk.util;
+package com.dataqin.apigateway.sdk.util;
 
-import com.github.taoism.apigateway.sdk.common.Constants;
+import com.dataqin.apigateway.sdk.common.Constants;
 
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
