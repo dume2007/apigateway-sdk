@@ -118,22 +118,21 @@ public class Auth {
      * @param sign
      * @param urlString
      * @param deadline
-     * @param body
      * @return
      */
-    public boolean validSign(String sign, String urlString, HashMap<String, Object> body, long deadline) {
+    public boolean validSign(String sign, String urlString, long deadline) {
         long currentTime = System.currentTimeMillis() / 1000;
         if (currentTime > deadline) {
             throw new SignatureExpireException("Signature expire");
         }
 
-        String currentSign = getSign(urlString, body, deadline);
-        logger.info("headSign:{}, currentSign:{}, url:{}, body:{}, deadline:{}",sign, currentSign, urlString, body, deadline);
+        String currentSign = getSign(urlString, null, deadline);
+        logger.info("headSign:{}, currentSign:{}, url:{}, deadline:{}",sign, currentSign, urlString, deadline);
         return sign.equals(currentSign);
     }
 
     /**
-     * get请求生成签名
+     * get/post请求生成签名
      * @param urlString urlString
      * @return String
      */
@@ -144,10 +143,12 @@ public class Auth {
 
     /**
      * post请求生成签名
+     * @Deprecated post类型也无需传入body
      * @param urlString
      * @param body
      * @return
      */
+    @Deprecated
     public String getSign(String urlString, HashMap<String, Object> body) {
         long deadline = System.currentTimeMillis() / 1000 + EXPIRE;
         return getSign(urlString, body, deadline);
