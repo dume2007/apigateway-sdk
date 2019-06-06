@@ -15,9 +15,13 @@ public class Test {
         String secretKey = "dataqin-sk-test20";
         String url = "http://127.0.0.1:8889/mortgage/api/v1/cancel/queryInfo";
 
+        long L1 = System.currentTimeMillis();
         Auth auth = Auth.create(accessKey, secretKey);
+        long L2 = System.currentTimeMillis();
         String signature = auth.getSign(url);
-        logger.info("--- getSign ---");
+        long L3 = System.currentTimeMillis();
+
+        logger.info("L2-L1={}, L3-L2={}", L2-L1, L3-L2);
         logger.info(signature);
         logger.info(new String(UrlSafeBase64.decode(signature)));
 
